@@ -1,62 +1,62 @@
 {
-    "cSpell.language": "pt,pt-BR",
-    "cSpell.enableFiletypes": [
-        "Log",
-        "bat",
-        "bats",
-        "cmake-cache",
-        "dart",
-        "git-rebase",
-        "gitignore",
-        "go.mod",
-        "gradle",
-        "http",
-        "ini",
-        "java-properties",
-        "jinja",
-        "makefile",
-        "nestjs",
-        "powershell",
-        "r",
-        "ruby",
-        "sass",
-        "sass.hover",
-        "sql",
-        "type"
-    ],
-    "json.schemas": [
-
-    ],
-    "launch": {
-
-        "configurations": [],
-        "compounds": []
+  "cSpell.language": "pt,pt-BR",
+  "cSpell.enableFiletypes": [
+    "Log",
+    "bat",
+    "bats",
+    "cmake-cache",
+    "dart",
+    "git-rebase",
+    "gitignore",
+    "go.mod",
+    "gradle",
+    "http",
+    "ini",
+    "java-properties",
+    "jinja",
+    "makefile",
+    "nestjs",
+    "powershell",
+    "r",
+    "ruby",
+    "sass",
+    "sass.hover",
+    "sql",
+    "type"
+  ],
+  "json.schemas": [],
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
     },
-    "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "files.eol": "\n",
+  "cSpell.languageSettings": [],
+  "emmet.preferences": {
 
-        "bash": {
-            "path": "bash",
-            "icon": "terminal-bash"
-        },
-        "zsh": {
-            "path": "zsh"
-        },
-        "fish": {
-            "path": "fish"
-        },
-        "tmux": {
-            "path": "tmux",
-            "icon": "terminal-tmux"
-        },
-        "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
-        }
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-    },
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
     "files.eol": "\n",
-
-
+  }
+  
 }

@@ -1,11 +1,11 @@
 class ListaCaracteristicaProdutoDTO {
-  nome: string
-  descricao: string
+  nome: string;
+  descricao: string;
 }
 
 class ListaImagemProdutoDTO {
-  url: string
-  descricao: string
+  url: string;
+  descricao: string;
 }
 
 export class ListaProdutoDTO {
@@ -13,6 +13,6 @@ export class ListaProdutoDTO {
     readonly id: string,
     readonly nome: string,
     readonly caracteristicas: ListaCaracteristicaProdutoDTO[],
-    readonly imagens: ListaImagemProdutoDTO[]
+    readonly imagens: ListaImagemProdutoDTO[],
   ) {}
 }

@@ -1,0 +1,5 @@
+mostra todas as migrações cadastradas
+typeorm-ts-node-esm -d src/db/data-source-cli.ts migration:show
+
+faz uma verificação geral do código e coloca ele no prettier
+    npm run lint
