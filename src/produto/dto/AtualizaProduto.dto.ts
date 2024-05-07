@@ -3,39 +3,22 @@ import { ArrayMinSize, IsArray, IsNotEmpty, IsNumber, IsOptional, IsString, IsUU
 import { CaracteristicaProdutoDTO, ImagemProdutoDTO } from './CriaProduto.dto'
 
 export class AtualizaProdutoDTO {
-  @IsUUID(undefined, {
-    message: 'ID do produto inválido',
-  })
-  id: string
-
-  @IsUUID(undefined, {
-    message: 'ID de usuário inválido',
-  })
+  @IsUUID(undefined, { message: 'ID de usuário inválido' })
   usuarioId: string
 
   @IsString()
-  @IsNotEmpty({
-    message: 'Nome do produto não pode ser vazio',
-  })
+  @IsNotEmpty({ message: 'Nome do produto não pode ser vazio' })
   @IsOptional()
   nome: string
 
-  @IsNumber({
-    maxDecimalPlaces: 2,
-    allowNaN: false,
-    allowInfinity: false,
-  })
+  @IsNumber({ maxDecimalPlaces: 2, allowNaN: false, allowInfinity: false })
   @IsOptional()
-  @Min(1, {
-    message: 'O valor precisa ser maior que zero',
-  })
+  @Min(1, { message: 'O valor precisa ser maior que zero' })
   @IsOptional()
   valor: number
 
   @IsNumber()
-  @Min(0, {
-    message: 'Quantidade mínima inválida',
-  })
+  @Min(0, { message: 'Quantidade mínima inválida' })
   @IsOptional()
   quantidadeDisponivel: number
 
@@ -45,7 +28,7 @@ export class AtualizaProdutoDTO {
 
   @ValidateNested()
   @IsArray()
-  @ArrayMinSize(3)
+  @ArrayMinSize(1)
   @Type(() => CaracteristicaProdutoDTO)
   @IsOptional()
   caracteristicas: CaracteristicaProdutoDTO[]
@@ -58,9 +41,7 @@ export class AtualizaProdutoDTO {
   imagens: ImagemProdutoDTO[]
 
   @IsString()
-  @IsNotEmpty({
-    message: 'Categoria do produto não pode ser vazia',
-  })
+  @IsNotEmpty({ message: 'Categoria do produto não pode ser vazia' })
   @IsOptional()
   categoria: string
 }

@@ -1,38 +1,28 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
-import { v4 as uuid } from 'uuid'
 import { AtualizaUsuarioDTO } from './dto/AtualizaUsuario.dto'
 import { CriaUsuarioDTO } from './dto/CriaUsuario.dto'
 import { ListaUsuarioDTO } from './dto/ListaUsuario.dto'
-import { UsuarioEntity } from './usuario.entity'
-import { UsuarioRepository } from './usuario.repository'
 import { UsuarioService } from './usuario.service'
 
 @Controller('/usuarios')
 export class UsuarioController {
-  constructor(private usuarioRepository: UsuarioRepository, private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService) {}
 
   @Post()
   async criaUsuario(@Body() dadosDoUsuario: CriaUsuarioDTO) {
-    const usuarioEntity = new UsuarioEntity()
-
-    usuarioEntity.email = dadosDoUsuario.email
-    usuarioEntity.senha = dadosDoUsuario.senha
-    usuarioEntity.nome = dadosDoUsuario.nome
-    usuarioEntity.id = uuid()
-
-    this.usuarioService.criaUsuario(usuarioEntity)
+    const usuarioCriado = await this.usuarioService.criaUsuario(dadosDoUsuario)
 
     return {
-      usuario: new ListaUsuarioDTO(usuarioEntity.id, usuarioEntity.nome),
+      usuario: new ListaUsuarioDTO(usuarioCriado.id, usuarioCriado.nome),
       messagem: 'usuário criado com sucesso',
     }
   }
 
   @Get()
   async listUsuarios() {
-    const usuariosLista = await this.usuarioService.listaUsuarios()
+    const usuariosSalvos = await this.usuarioService.listUsuarios()
 
-    return usuariosLista
+    return usuariosSalvos
   }
 
   @Put('/:id')
@@ -51,7 +41,7 @@ export class UsuarioController {
 
     return {
       usuario: usuarioRemovido,
-      messagem: 'usuário removido com sucesso',
+      messagem: 'usuário removido com suceso',
     }
   }
 }
